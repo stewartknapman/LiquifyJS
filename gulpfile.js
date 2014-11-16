@@ -21,7 +21,7 @@ gulp.task('default', ['build', 'example']);
   Build
 */
 gulp.task('build', function () {
-  gulp.watch(js_files, ['lint']); // 'browserify'
+  gulp.watch(js_files, ['lint', 'browserify_example']); // 'browserify'
 });
 
 gulp.task('lint', function () {

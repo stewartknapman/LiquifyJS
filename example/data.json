@@ -1,0 +1,7 @@
+{
+  "pages" : {
+    "/" : {
+      "body": "This is the body text"
+    }
+  }
+}
