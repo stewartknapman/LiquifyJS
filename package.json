@@ -2,7 +2,7 @@
   "name": "PagerJS",
   "version": "1.0.0",
   "description": "A hacky js browser framework thing that renders out content using liquid templating.",
-  "main": "build/pager.js",
+  "main": "lib/pager.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/stewartknapman/pagerjs.git"

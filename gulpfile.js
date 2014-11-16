@@ -7,7 +7,7 @@ var gulp        = require('gulp'),
   sass          = require('gulp-ruby-sass'),
   prefix        = require('gulp-autoprefixer');
   
-var js_files = ['./src/*.js', './src/**/*.js'];
+var js_files = ['./lib/*.js', './lib/**/*.js'];
 var example_files = ['./example/app.js', './example/style.scss'];
   
 var onError = function (err) {
@@ -21,7 +21,7 @@ gulp.task('default', ['build', 'example']);
   Build
 */
 gulp.task('build', function () {
-  gulp.watch(js_files, ['lint', 'browserify']);
+  gulp.watch(js_files, ['lint']); // 'browserify'
 });
 
 gulp.task('lint', function () {
@@ -33,28 +33,20 @@ gulp.task('lint', function () {
     .pipe(jshint.reporter('default'));
 });
 
+/*
 gulp.task('browserify', function () {
-  return browserify('./src/pager.js', {
+  return browserify('./lib/pager.js', {
       debug: true,
       standalone: 'Pager'
     })
-    //.require('./src/pager.js', { expose: 'pager' })
-    .bundle()
-    .pipe(source('pager.js'))
-    .pipe(gulp.dest('./build/'));
-});
-
-gulp.task('uglifyify', function () {
-  return browserify('./src/pager.js', {
-      debug: true//,
-      //standalone: 'Pager'
-    })
-    //.require('./src/pager.js', { expose: 'pager' })
+    //.require('./lib/pager.js', { expose: 'pager' })
+    .transform('brfs')
     .transform({ global: true }, 'uglifyify')
     .bundle()
     .pipe(source('pager.js'))
     .pipe(gulp.dest('./build/'));
 });
+*/
 
 /*
   Example
@@ -76,6 +68,7 @@ gulp.task('browserify_example', function () {
   return browserify('./example/app.js', {
       debug: true
     })
+    .transform('brfs')
     .bundle()
     .pipe(source('app.browserifed.js'))
     .pipe(gulp.dest('./example/'));

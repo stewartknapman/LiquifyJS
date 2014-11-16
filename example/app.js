@@ -1,10 +1,8 @@
-/*
 var fs = require('fs');
-var Pager = require('../build/pager');
+var Pager = require('../lib/pager');
 
 var templates = {
-  temp: fs.readFileSync('./template.liquid', 'utf8')
+  temp: fs.readFileSync('./example/template.liquid', 'utf8')
 };
 
 var pager = new Pager(templates);
-*/
