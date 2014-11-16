@@ -1,0 +1,11 @@
+{
+  "name": "PagerJS",
+  "version": "1.0.0",
+  "description": "A hacky js browser framework thing that renders out content using liquid templating.",
+  "main": "dist/pager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stewartknapman",
+  "license": "ISC"
+}
