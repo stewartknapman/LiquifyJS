@@ -8,16 +8,19 @@ var gulp        = require('gulp'),
   prefix        = require('gulp-autoprefixer');
   
 var js_files = ['./src/*.js', './src/**/*.js'];
+var example_files = ['./example/app.js', './example/style.scss'];
   
 var onError = function (err) {
   gutil.beep();
   gutil.log(gutil.colors.red(err));
 };
 
+gulp.task('default', ['build', 'example']);
+
 /*
   Build
 */
-gulp.task('default', function () {
+gulp.task('build', function () {
   gulp.watch(js_files, ['lint', 'browserify']);
 });
 
@@ -32,17 +35,21 @@ gulp.task('lint', function () {
 
 gulp.task('browserify', function () {
   return browserify('./src/pager.js', {
-      debug: true
+      debug: true,
+      standalone: 'Pager'
     })
+    //.require('./src/pager.js', { expose: 'pager' })
     .bundle()
     .pipe(source('pager.js'))
     .pipe(gulp.dest('./build/'));
 });
 
-gulp.task('build', function () {
+gulp.task('uglifyify', function () {
   return browserify('./src/pager.js', {
-      debug: true
+      debug: true//,
+      //standalone: 'Pager'
     })
+    //.require('./src/pager.js', { expose: 'pager' })
     .transform({ global: true }, 'uglifyify')
     .bundle()
     .pipe(source('pager.js'))
@@ -53,7 +60,7 @@ gulp.task('build', function () {
   Example
 */
 gulp.task('example', function () {
-  gulp.watch(['./example/app.js', './example/style.scss'], ['lint_example', 'browserify_example', 'sass_example']);
+  gulp.watch(example_files, ['lint_example', 'browserify_example', 'sass_example']);
 });
 
 gulp.task('lint_example', function () {
