@@ -2,10 +2,26 @@
   "name": "PagerJS",
   "version": "1.0.0",
   "description": "A hacky js browser framework thing that renders out content using liquid templating.",
-  "main": "dist/pager.js",
+  "main": "build/pager.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stewartknapman/pagerjs.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "stewartknapman",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "brfs": "^1.2.0",
+    "browserify": "^5.11.0",
+    "gulp": "^3.8.7",
+    "tinyliquid": "^0.2.24",
+    "vinyl-source-stream": "^0.1.1",
+    "gulp-util": "~3.0.1",
+    "gulp-plumber": "~0.6.5",
+    "uglifyify": "~2.5.0",
+    "gulp-jshint": "~1.8.4",
+    "jquery": "~2.1.1"
+  }
 }
