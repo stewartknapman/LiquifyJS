@@ -1,7 +1,7 @@
 {
   "name": "LiquifyJS",
   "version": "0.0.0",
-  "description": "",
+  "description": "A simple browser framework that changes a pages content by rendering liquid templates.",
   "main": "example/index.html",
   "repository": {
     "type": "git",
