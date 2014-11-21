@@ -2,7 +2,7 @@
   "name": "LiquifyJS",
   "version": "0.0.0",
   "description": "A hacky js browser framework thing that renders out content using liquid templating.",
-  "main": "lib/pager.js",
+  "main": "lib/liquify.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/stewartknapman/LiquifyJS.git"

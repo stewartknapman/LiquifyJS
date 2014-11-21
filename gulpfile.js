@@ -15,11 +15,16 @@ var onError = function (err) {
   gutil.log(gutil.colors.red(err));
 };
 
-gulp.task('default', ['lint', 'example']);
+gulp.task('default', function () {
+  gulp.watch(js_files, ['build']);
+  gulp.watch(example_files, ['example']);
+});
 
 /*
   LiquifyJS
 */
+
+gulp.task('build', ['lint', 'browserify_example']);
 
 gulp.task('lint', function () {
   return gulp.src(js_files)
@@ -33,9 +38,7 @@ gulp.task('lint', function () {
 /*
   Example
 */
-gulp.task('example', function () {
-  gulp.watch(example_files, ['lint_example', 'browserify_example', 'sass_example']);
-});
+gulp.task('example', ['lint_example', 'browserify_example', 'sass_example']);
 
 gulp.task('lint_example', function () {
   return gulp.src('./example/app.js')
