@@ -1,3 +1,9 @@
+var Liquify = require('../../lib/liquify');
+
+var liquify = new Liquify();
+console.log(liquify.say_hello());
+
+
 /*
 var fs = require('fs');
 var Pager = require('../lib/pager');
