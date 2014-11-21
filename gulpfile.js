@@ -8,21 +8,18 @@ var gulp        = require('gulp'),
   prefix        = require('gulp-autoprefixer');
   
 var js_files = ['./lib/*.js', './lib/**/*.js'];
-var example_files = ['./example/app.js', './example/style.scss'];
+var example_files = ['./example/js/app.js', './example/scss/style.scss'];
   
 var onError = function (err) {
   gutil.beep();
   gutil.log(gutil.colors.red(err));
 };
 
-gulp.task('default', ['build', 'example']);
+gulp.task('default', ['lint', 'example']);
 
 /*
-  Build
+  LiquifyJS
 */
-gulp.task('build', function () {
-  gulp.watch(js_files, ['lint', 'browserify_example']); // 'browserify'
-});
 
 gulp.task('lint', function () {
   return gulp.src(js_files)
@@ -32,21 +29,6 @@ gulp.task('lint', function () {
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
-
-/*
-gulp.task('browserify', function () {
-  return browserify('./lib/pager.js', {
-      debug: true,
-      standalone: 'Pager'
-    })
-    //.require('./lib/pager.js', { expose: 'pager' })
-    .transform('brfs')
-    .transform({ global: true }, 'uglifyify')
-    .bundle()
-    .pipe(source('pager.js'))
-    .pipe(gulp.dest('./build/'));
-});
-*/
 
 /*
   Example
@@ -65,17 +47,17 @@ gulp.task('lint_example', function () {
 });
 
 gulp.task('browserify_example', function () {
-  return browserify('./example/app.js', {
+  return browserify('./example/js/app.js', {
       debug: true
     })
     .transform('brfs')
     .bundle()
     .pipe(source('app.browserifed.js'))
-    .pipe(gulp.dest('./example/'));
+    .pipe(gulp.dest('./example/js/'));
 });
 
 gulp.task('sass_example', function () {
-  return gulp.src('./example/style.scss')
+  return gulp.src('./example/scss/style.scss')
     .pipe(plumber({
       errorHandler: onError
     }))
@@ -83,5 +65,5 @@ gulp.task('sass_example', function () {
       style: 'compact'
     }))
     .pipe(prefix("last 2 versions", "> 5%", "ie 8", "ie 7"))
-    .pipe(gulp.dest('./example/'));
+    .pipe(gulp.dest('./example/css/'));
 });

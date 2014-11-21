@@ -1,11 +1,11 @@
 {
-  "name": "PagerJS",
+  "name": "LiquifyJS",
   "version": "0.0.0",
   "description": "",
   "main": "example/index.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stewartknapman/pagerjs.git"
+    "url": "https://github.com/stewartknapman/LiquifyJS.git"
   },
   "author": "stewartknapman",
   "license": "ISC",

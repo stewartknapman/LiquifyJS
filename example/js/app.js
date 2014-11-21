@@ -1,3 +1,4 @@
+/*
 var fs = require('fs');
 var Pager = require('../lib/pager');
 
@@ -6,10 +7,12 @@ var templates = {
 };
 
 var pager = new Pager(templates);
+*/
 
 /*
   load all data up front
 */
+/*
 pager.navigation.on_nav_action = function () {
   
   pager.navigation.route('/', function () {
@@ -31,6 +34,7 @@ pager.site_data.on_data_loaded = function (data) { // bug: data is undefined but
 };
 
 pager.site_data.load('/data.json');
+*/
 
 
 /*

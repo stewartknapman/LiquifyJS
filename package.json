@@ -1,11 +1,11 @@
 {
-  "name": "PagerJS",
-  "version": "1.0.0",
+  "name": "LiquifyJS",
+  "version": "0.0.0",
   "description": "A hacky js browser framework thing that renders out content using liquid templating.",
   "main": "lib/pager.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stewartknapman/pagerjs.git"
+    "url": "https://github.com/stewartknapman/LiquifyJS.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,9 +21,10 @@
     "gulp-plumber": "~0.6.5",
     "gulp-ruby-sass": "^0.7.1",
     "gulp-util": "~3.0.1",
-    "jquery": "~2.1.1",
-    "tinyliquid": "^0.2.24",
     "uglifyify": "~2.5.0",
     "vinyl-source-stream": "^0.1.1"
+  },
+  "dependencies": {
+    "liquid.js": "git+https://github.com/stewartknapman/liquid.js.git"
   }
 }

@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Pager JS</title>
+  <title>LiquifyJS</title>
   
-  <script src="app.browserifed.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <a href="/" data-nav-target=".target" data-nav-template="temp">Nav</a>
-  <div class="target">
-    
-  </div>
+  <article class="site__container">
+    <header class="site__header">
+      <h1>LiquifyJS</h1>
+    </header>
+    <section class="site__content">
+      <a class="btn" href="/" data-nav-target=".target" data-nav-template="temp">Click to update targets content</a>
+      <div class="target"></div>
+    </section>
+  </article>
+  <script src="/js/app.browserifed.js" async defer></script>
 </body>
 </html>
