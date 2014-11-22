@@ -1,7 +1,7 @@
 var Liquify = require('../../lib/liquify');
 
 var liquify = new Liquify();
-
+console.log(liquify);
 
 
 

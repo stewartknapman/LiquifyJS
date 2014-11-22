@@ -63,4 +63,5 @@ describe('LiquifyJS', function () {
     expect(liquify.settings.data_attrs.template).toBe('data-lqfy-template');
   });
   
+  // events
 });
