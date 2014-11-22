@@ -24,15 +24,23 @@ describe('LiquifyJS', function () {
     expect(liquify.templates.template_1).toBe('hello {{ name }}');
   });
 
-  it('accepts an optional data on instantiation', function () {
+  it('accepts an optional data object on instantiation', function () {
     var liquify = new Liquify({
-      templates: templates,
       data: {
         name: 'liquify'
       }
     });
     
     expect(liquify.data.name).toBe('liquify');
+  });
+  
+  xit('accepts an optional url string to load data from on instantiation', function () {
+    var liquify = new Liquify({
+      data_url: '/data.json'
+    });
+    
+    expect(liquify.data_url).toBe('/data.json');
+    // expects data to have been loaded from this place
   });
   
   // Default settings
