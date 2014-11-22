@@ -43,6 +43,8 @@ describe('DataObject', function () {
   it('takes a json array and turns it into a data object', function () {
     var my_data = new DataObject(my_array);
     
+    expect(typeof my_data).toBe('object');
+    
     expect(my_data.first).toEqual({
       "title": "My Page 1",
       "slug": "my-page-1",
@@ -67,21 +69,9 @@ describe('DataObject', function () {
   });
   
   it('takes a json object and turns it into a data object', function () {
-
     var my_data = new DataObject(my_json);
-
-/*    
-    console.log('---');
-    console.log(my_data);
-    console.log(my_data.length);
     
-    for (var d in my_data) {
-      console.log('data: ', d);
-    }
-    for (var i = 0; i < my_data.length; i++) {
-      console.log('for: ', i);
-    }
-*/
+    expect(typeof my_data).toBe('object');
     
     expect(my_data.first).toEqual({
       "title": "My Page 1",
@@ -106,6 +96,6 @@ describe('DataObject', function () {
     }
   });
   
-  xit('works in a loop');
+  xit('works recursively');
   
 });
