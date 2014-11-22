@@ -27,11 +27,23 @@ describe('LiquifyJS', function () {
   it('accepts an optional data object on instantiation', function () {
     var liquify = new Liquify({
       data: {
-        name: 'liquify'
+        name: 'liquify',
+        pages: [
+          {
+            title: 'Page 1',
+            slug: 'page-1'
+          },
+          {
+            title: 'Page 2',
+            slug: 'page-2'
+          }
+        ]
       }
     });
     
     expect(liquify.data.name).toBe('liquify');
+    expect(liquify.data.pages.first.title).toBe('Page 1');
+    expect(liquify.data.pages.last.slug).toBe('page-2');
   });
   
   xit('accepts an optional url string to load data from on instantiation', function () {
