@@ -49,7 +49,7 @@ describe('LiquifyJS', function () {
     expect(liquify.settings.data_attrs.template).toBe('data-lqfy-template');
   });
   
-  xit('can have these default settings overridden', function () {
+  it('can have these default settings overridden', function () {
     var liquify = new Liquify({
       settings: {
         active_class: 'is-current',
