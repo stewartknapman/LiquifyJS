@@ -43,7 +43,7 @@ Data will be storeed and then used to pass through to the renderer as liquid loc
           current: lqfy.get_data_for(['pages', lqfy.current_slug])
         }
         
-        lqfy.render(data, lqfy.current_template, lqfy.current_target);
+        lqfy.render(data, [{template: '', target: ''}, funct]);
       });
       
     });
@@ -61,7 +61,7 @@ Data will be storeed and then used to pass through to the renderer as liquid loc
             current: lqfy.get_data_for(['pages', lqfy.current_slug])
           }
           
-          lqfy.render(data, lqfy.current_template, lqfy.current_target);
+          lqfy.render(data);
         });
       
       });
