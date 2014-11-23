@@ -4,7 +4,7 @@ var gulp        = require('gulp'),
   source        = require('vinyl-source-stream'),
   browserify    = require('browserify'),
   jshint        = require('gulp-jshint'),
-  jasmine       = require('gulp-jasmine'),
+  jasmine       = require('gulp-jasmine-phantom'),
   sass          = require('gulp-ruby-sass'),
   prefix        = require('gulp-autoprefixer');
   
@@ -39,7 +39,12 @@ gulp.task('lint', function () {
 
 gulp.task('test', function () {
   return gulp.src(test_files)
-    .pipe(jasmine());
+  .pipe(jasmine());
+/*
+    .pipe(jasmine({
+      integration: true
+    }));
+*/
 });
 
 /*

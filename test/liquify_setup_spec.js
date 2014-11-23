@@ -3,7 +3,7 @@
 
 var Liquify = require('../lib/liquify.js');
 
-describe('LiquifyJS', function () {
+describe('LiquifyJS Setup', function () {
 
   var templates = {
     template_1: 'hello {{ name }}'
@@ -83,5 +83,4 @@ describe('LiquifyJS', function () {
     expect(liquify.settings.data_attrs.template).toBe('data-lqfy-template');
   });
   
-  // events
 });

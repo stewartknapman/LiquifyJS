@@ -3,8 +3,21 @@ var Liquify = require('../../lib/liquify');
 var liquify = new Liquify();
 console.log(liquify);
 
-
-
+liquify.action(function () {
+  
+  liquify.route('/', function () {
+    
+    console.log('routing /');
+    
+  });
+  
+  liquify.route('/*', function () {
+    
+    console.log('routing /*'); // should not be called
+    
+  });
+  
+});
 
 
 
