@@ -1,7 +1,6 @@
 /* jslint node: true */
 /* global describe, it, expect */
 
-/*
 var Liquify = require('../../lib/liquify.js');
 
 describe('LiquifyJS Action', function () {
@@ -23,7 +22,7 @@ describe('LiquifyJS Action', function () {
   });
   
   // main action method
-  it('captures the click and calls the main action method', function () {
+  xit('captures the click and calls the main action method', function () {
     var moose = '';
     
     liquify.action(function () {
@@ -34,4 +33,3 @@ describe('LiquifyJS Action', function () {
   });
   
 });
-*/
