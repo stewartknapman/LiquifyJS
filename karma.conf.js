@@ -4,7 +4,7 @@ module.exports = function(config) {
       'tests/**/*.js'
     ],
     frameworks: ['browserify', 'jasmine'],
-    browsers: ['PhantomJS'],
+/*     browsers: ['Chrome'], // 'PhantomJS', 'Firefox', 'Safari' */
     preprocessors: {
       'tests/**/*.js': [ 'browserify' ]
     },

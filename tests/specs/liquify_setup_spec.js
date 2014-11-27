@@ -1,6 +1,7 @@
 /* jslint node: true */
 /* global describe, it, expect */
 
+/*
 var Liquify = require('../../lib/liquify.js');
 
 describe('LiquifyJS Setup', function () {
@@ -84,3 +85,4 @@ describe('LiquifyJS Setup', function () {
   });
   
 });
+*/
