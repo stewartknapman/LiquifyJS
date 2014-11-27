@@ -1,7 +1,7 @@
 /* jslint node: true */
 /* global describe, it, expect */
 
-var Eventer = require('../lib/liquify/eventer.js');
+var Eventer = require('../../lib/liquify/eventer.js');
 
 describe('Eventer', function () {
   

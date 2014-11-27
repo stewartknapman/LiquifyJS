@@ -1,7 +1,7 @@
 /* jslint node: true */
 /* global describe, it, expect */
 
-var DataObject = require('../lib/liquify/data_object.js');
+var DataObject = require('../../lib/liquify/data_object.js');
 
 describe('DataObject', function () {
   

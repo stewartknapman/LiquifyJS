@@ -1,7 +1,7 @@
 /* jslint node: true */
 /* global describe, it, expect */
 
-require('../lib/liquify/extensions.js');
+require('../../lib/liquify/extensions.js');
 
 describe('lqfy', function () {
 

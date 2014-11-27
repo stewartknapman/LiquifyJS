@@ -4,12 +4,12 @@ var gulp        = require('gulp'),
   source        = require('vinyl-source-stream'),
   browserify    = require('browserify'),
   jshint        = require('gulp-jshint'),
-  jasmine       = require('gulp-jasmine-phantom'),
+  karma         = require('karma'),
   sass          = require('gulp-ruby-sass'),
   prefix        = require('gulp-autoprefixer');
   
-var js_files = ['./lib/*.js', './lib/**/*.js', './test/*.js'];
-var test_files = ['./test/*.js'];
+var test_files = './tests/**/*.js';
+var js_files = ['./lib/*.js', './lib/**/*.js', test_files];
 var example_files = ['./example/js/app.js', './example/scss/style.scss'];
   
 var onError = function (err) {
@@ -20,13 +20,18 @@ var onError = function (err) {
 gulp.task('default', function () {
   gulp.watch(js_files, ['build']);
   gulp.watch(example_files, ['example']);
+  
+  /* Run tests */
+  karma.server.start({
+    configFile: __dirname + '/karma.conf.js'
+  });
 });
 
 /*
   LiquifyJS
 */
 
-gulp.task('build', ['lint', 'test', 'browserify_example']);
+gulp.task('build', ['lint', 'browserify_example']);
 
 gulp.task('lint', function () {
   return gulp.src(js_files)
@@ -35,16 +40,6 @@ gulp.task('lint', function () {
     }))
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
-});
-
-gulp.task('test', function () {
-  return gulp.src(test_files)
-  .pipe(jasmine());
-/*
-    .pipe(jasmine({
-      integration: true
-    }));
-*/
 });
 
 /*
